@@ -1,0 +1,105 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#quiz-container {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#progress {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+#question {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.option-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+  text-align: left;
+}
+
+.option-btn:hover {
+  background-color: #f0f7ff;
+  border-color: #2196f3;
+}
+
+/* For the brief highlight when clicked */
+.selected {
+  background-color: #2196f3 !important;
+  color: white;
+  border-color: #1976d2;
+}
+
+#restart-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Responsiveness */
+
+/* For Tablets and smaller screens */
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start; /* Move it up slightly so it's easier to see */
+    padding-top: 20px;
+  }
+
+  #quiz-container {
+    width: 95%; /* Take up more of the screen width */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  #question {
+    font-size: 18px; /* Slightly smaller text for mobile */
+  }
+
+  .option-btn {
+    padding: 12px; /* Thinner buttons for smaller screens */
+    font-size: 15px;
+  }
+}
+
+/* For very small phones */
+@media (max-width: 360px) {
+  #question {
+    font-size: 16px;
+  }
+
+  #progress {
+    font-size: 12px;
+  }
+}
