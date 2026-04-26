@@ -64,15 +64,28 @@ function loadQuestion() {
     button.classList.add("option-btn");
 
     button.onclick = () => {
-      // Check answer
+      const allButtons = optionsEl.querySelectorAll("button");
+      allButtons.forEach((btn) => (btn.disabled = true));
+
       if (option === currentQuestion.answer) {
         score++;
+        button.style.backgroundColor = "#4CAF50"; // Green for correct
+        button.style.color = "#fff";
+        button.style.borderColor = "#4CAF50";
+      } else {
+        button.style.backgroundColor = "#f44336"; // Red for wrong
+        button.style.color = "#fff";
+        button.style.borderColor = "#f44336";
       }
 
-      // Visual feedback
-      button.classList.add("selected");
-
-      // Small delay so the user sees their click before moving
+      allButtons.forEach((btn) => {
+        if (btn.textContent === currentQuestion.answer) {
+          btn.style.backgroundColor = "#4CAF50"; // Highlight
+          btn.style.color = "#fff";
+          btn.style.borderColor = "#4CAF50";
+        }
+      });
+      // set a delay before loading the next question to show feedback
       setTimeout(() => {
         currentQuestionIndex++;
         if (currentQuestionIndex < quizData.length) {
@@ -80,7 +93,7 @@ function loadQuestion() {
         } else {
           showResult();
         }
-      }, 300);
+      }, 600); // Delay to show feedback
     };
 
     optionsEl.appendChild(button);
