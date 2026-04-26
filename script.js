@@ -93,7 +93,7 @@ function loadQuestion() {
         } else {
           showResult();
         }
-      }, 600); // Delay to show feedback
+      }, 800); // Delay to show feedback
     };
 
     optionsEl.appendChild(button);
